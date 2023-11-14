@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage(bulid-img){
+        stage('bulid-img'){
             script{
                 sh 'docker build -t usama7amza/my-images:v1.0 .'
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
@@ -10,7 +10,7 @@ pipeline{
             }
             }
         }
-        stage(DONE){
+        stage('DONE'){
             script{
             echo "DONE"
             }
