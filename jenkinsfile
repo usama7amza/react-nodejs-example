@@ -8,11 +8,13 @@ pipline{
                 sh "echo $PASS | docker login -u $USER -p --password-stdin"
                 sh 'docker push usama7amza/my-images:v1.0'
             }
+            }
         }
-    }
-    stage(DONE){
-        script{
+        stage(DONE){
+            script{
             echo "DONE"
+            }
+    
         }
     }
 }
